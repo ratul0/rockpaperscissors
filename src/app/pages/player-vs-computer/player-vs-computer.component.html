@@ -1,1 +1,57 @@
-<app-header [roundNumber]="1"></app-header>
+<app-header [roundNumber]="roundNumber"></app-header>
+<div class="board">
+  <div class="player1">
+    <div class="player1_actions">
+      <button
+        mat-icon-button
+        aria-label="rock"
+        (click)="playGame(gameOptions.ROCK)"
+        [disabled]="isCompleted"
+      >
+        <mat-icon>crop_3_2</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        aria-label="paper"
+        (click)="playGame(gameOptions.PAPER)"
+        [disabled]="isCompleted"
+      >
+        <mat-icon>note</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        aria-label="scissor"
+        (click)="playGame(gameOptions.SCISSOR)"
+        [disabled]="isCompleted"
+      >
+        <mat-icon>content_cut</mat-icon>
+      </button>
+    </div>
+    <div class="player1_score">Score: {{ result.player1Score }}</div>
+  </div>
+  <div class="status">
+    <p *ngIf="isInitialState">{{ result.result }}</p>
+    <p *ngIf="isCompleted">{{ result.result }}</p>
+  </div>
+  <div class="player2">
+    <div class="player2_actions">
+      <button mat-icon-button aria-label="rock">
+        <mat-icon>crop_3_2</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="paper">
+        <mat-icon>note</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="scissor">
+        <mat-icon>content_cut</mat-icon>
+      </button>
+    </div>
+    <div class="player1_score">Score: {{ result.player2Score }}</div>
+  </div>
+
+  <div class="common_actions">
+    <button *ngIf="isCompleted" mat-button color="accent" (click)="playAgain()">
+      Next Round
+    </button>
+    <button mat-button color="warn" (click)="restart()">Restart Game</button>
+  </div>
+</div>
