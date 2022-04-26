@@ -1,0 +1,21 @@
+<div class="card">
+  <img
+    *ngIf="isRock"
+    [ngClass]="{ active: isActive }"
+    class="rock"
+    src="assets/rock.svg"
+    alt="Rock image"
+  />
+  <img
+    *ngIf="isPaper"
+    [ngClass]="{ active: isActive }"
+    src="assets/paper.svg"
+    alt="Paper image"
+  />
+  <img
+    *ngIf="isScissor"
+    [ngClass]="{ active: isActive }"
+    src="assets/scissor.svg"
+    alt="Scissor image"
+  />
+</div>

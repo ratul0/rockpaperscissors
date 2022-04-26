@@ -1,0 +1,16 @@
+.card {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.active {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+}

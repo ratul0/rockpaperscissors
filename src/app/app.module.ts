@@ -13,6 +13,7 @@ import { InstructionComponent } from './components/instruction/instruction.compo
 import { HeaderComponent } from './components/header/header.component';
 import { CalculateResultInterfaceToken } from './services/result/calculate-result.interface';
 import { RockPaperScissorStrategy } from './services/result/rock-paper-scissor.strategy';
+import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RockPaperScissorStrategy } from './services/result/rock-paper-scissor.s
     ComputerVsComputerComponent,
     InstructionComponent,
     HeaderComponent,
+    PlayingCardComponent,
   ],
   imports: [
     BrowserModule,
