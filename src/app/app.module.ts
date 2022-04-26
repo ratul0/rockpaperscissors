@@ -11,6 +11,8 @@ import { PlayerVsComputerComponent } from './pages/player-vs-computer/player-vs-
 import { ComputerVsComputerComponent } from './pages/computer-vs-computer/computer-vs-computer.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CalculateResultInterfaceToken } from './services/result/calculate-result.interface';
+import { RockPaperScissorStrategy } from './services/result/rock-paper-scissor.strategy';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,12 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: CalculateResultInterfaceToken,
+      useClass: RockPaperScissorStrategy,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
