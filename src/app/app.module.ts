@@ -9,9 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { PlayerVsComputerComponent } from './pages/player-vs-computer/player-vs-computer.component';
 import { ComputerVsComputerComponent } from './pages/computer-vs-computer/computer-vs-computer.component';
+import { InstructionComponent } from './components/instruction/instruction.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, PlayerVsComputerComponent, ComputerVsComputerComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    PlayerVsComputerComponent,
+    ComputerVsComputerComponent,
+    InstructionComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
