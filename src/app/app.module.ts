@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { PlayerVsComputerComponent } from './pages/player-vs-computer/player-vs-computer.component';
 import { ComputerVsComputerComponent } from './pages/computer-vs-computer/computer-vs-computer.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { InstructionComponent } from './components/instruction/instruction.compo
     PlayerVsComputerComponent,
     ComputerVsComputerComponent,
     InstructionComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

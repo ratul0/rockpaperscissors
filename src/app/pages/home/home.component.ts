@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { InstructionComponent } from 'src/app/components/instruction/instruction.component';
 import {
   COMPUTER_VS_COMPUTER,
   PLAYER_VS_COMPUTER,
