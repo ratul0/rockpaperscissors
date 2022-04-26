@@ -36,14 +36,17 @@ export class PlayerVsComputerComponent {
   }
 
   public playGame(playerChoice: Options): void {
-    this.board = {
-      ...this.board,
-      player1: playerChoice,
-      player2: randomEnum(Options),
-      gameStatus: GameStatus.COMPLETED,
-      roundNumber: this.board.roundNumber + 1,
-    };
-    this.board = this.calculateResultService.calculateResult(this.board);
+    if (!this.isCompleted) {
+      this.board = {
+        ...this.board,
+        player1: playerChoice,
+        player2: randomEnum(Options),
+        gameStatus: GameStatus.COMPLETED,
+        roundNumber: this.board.roundNumber + 1,
+      };
+      this.board = this.calculateResultService.calculateResult(this.board);
+    }
+
     console.log(this.board);
   }
 

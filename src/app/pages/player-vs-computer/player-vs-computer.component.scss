@@ -1,4 +1,41 @@
-.board {
-  height: 100vh;
+.container {
+  height: 100%;
   background-color: lightgray;
+}
+.board {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.common_actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Indie Flower";
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player1,
+.player2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.player_name,
+.player_score {
+  font-family: "Indie Flower";
+  font-weight: bold;
+  font-size: 2rem;
 }

@@ -1,57 +1,61 @@
-<app-header [roundNumber]="roundNumber"></app-header>
-<div class="board">
-  <div class="player1">
-    <div class="player1_actions">
-      <button
-        mat-icon-button
-        aria-label="rock"
-        (click)="playGame(gameOptions.ROCK)"
-        [disabled]="isCompleted"
-      >
-        <mat-icon>crop_3_2</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        aria-label="paper"
-        (click)="playGame(gameOptions.PAPER)"
-        [disabled]="isCompleted"
-      >
-        <mat-icon>note</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        aria-label="scissor"
-        (click)="playGame(gameOptions.SCISSOR)"
-        [disabled]="isCompleted"
-      >
-        <mat-icon>content_cut</mat-icon>
-      </button>
+<div class="container">
+  <app-header [roundNumber]="roundNumber"></app-header>
+  <div class="board">
+    <div class="player1">
+      <div class="player_name">Player 1</div>
+      <div class="player1_actions">
+        <app-playing-card
+          [type]="gameOptions.ROCK"
+          (click)="playGame(gameOptions.ROCK)"
+          [isActive]="result.player1 === gameOptions.ROCK"
+        ></app-playing-card>
+        <app-playing-card
+          [type]="gameOptions.PAPER"
+          (click)="playGame(gameOptions.PAPER)"
+          [isActive]="result.player1 === gameOptions.PAPER"
+        ></app-playing-card>
+        <app-playing-card
+          [type]="gameOptions.SCISSOR"
+          (click)="playGame(gameOptions.SCISSOR)"
+          [isActive]="result.player1 === gameOptions.SCISSOR"
+        ></app-playing-card>
+      </div>
+      <div class="player_score">Score: {{ result.player1Score }}</div>
     </div>
-    <div class="player1_score">Score: {{ result.player1Score }}</div>
+    <div class="player2">
+      <div class="player_name">Player 2</div>
+      <div class="player2_actions">
+        <app-playing-card
+          [type]="gameOptions.ROCK"
+          [isActive]="result.player2 === gameOptions.ROCK"
+        ></app-playing-card>
+        <app-playing-card
+          [type]="gameOptions.PAPER"
+          [isActive]="result.player2 === gameOptions.PAPER"
+        ></app-playing-card>
+        <app-playing-card
+          [type]="gameOptions.SCISSOR"
+          [isActive]="result.player2 === gameOptions.SCISSOR"
+        ></app-playing-card>
+      </div>
+      <div class="player_score">Score: {{ result.player2Score }}</div>
+    </div>
   </div>
   <div class="status">
     <p *ngIf="isInitialState">{{ result.result }}</p>
     <p *ngIf="isCompleted">{{ result.result }}</p>
   </div>
-  <div class="player2">
-    <div class="player2_actions">
-      <button mat-icon-button aria-label="rock">
-        <mat-icon>crop_3_2</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="paper">
-        <mat-icon>note</mat-icon>
-      </button>
-      <button mat-icon-button aria-label="scissor">
-        <mat-icon>content_cut</mat-icon>
-      </button>
-    </div>
-    <div class="player1_score">Score: {{ result.player2Score }}</div>
-  </div>
-
   <div class="common_actions">
-    <button *ngIf="isCompleted" mat-button color="accent" (click)="playAgain()">
+    <button
+      *ngIf="isCompleted"
+      mat-flat-button
+      color="accent"
+      (click)="playAgain()"
+    >
       Next Round
     </button>
-    <button mat-button color="warn" (click)="restart()">Restart Game</button>
+    <button mat-flat-button color="warn" (click)="restart()">
+      Restart Game
+    </button>
   </div>
 </div>
