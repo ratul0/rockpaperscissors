@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="header">
+  <button mat-icon-button aria-label="back button" (click)="goToHomePage()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <h3>Round {{ roundNumber }}</h3>
+
+  <button
+    mat-icon-button
+    aria-label="help button"
+    (click)="openInstructionDialog()"
+  >
+    <mat-icon>help</mat-icon>
+  </button>
+</mat-toolbar>
