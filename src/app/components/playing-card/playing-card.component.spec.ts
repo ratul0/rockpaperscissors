@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayingCardComponent } from './playing-card.component';
 
-describe('PlayingCardComponent', () => {
+fdescribe('PlayingCardComponent', () => {
   let component: PlayingCardComponent;
   let fixture: ComponentFixture<PlayingCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlayingCardComponent ]
-    })
-    .compileComponents();
+      declarations: [PlayingCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
