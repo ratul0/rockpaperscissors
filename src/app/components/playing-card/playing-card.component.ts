@@ -23,7 +23,7 @@ export class PlayingCardComponent {
     return this.type === Options.ROCK;
   }
 
-  public get isScissor(): boolean {
+  public get isScissors(): boolean {
     return this.type === Options.SCISSOR;
   }
 }
