@@ -46,8 +46,6 @@ export class PlayerVsComputerComponent {
       };
       this.board = this.calculateResultService.calculateResult(this.board);
     }
-
-    console.log(this.board);
   }
 
   public playAgain(): void {
