@@ -2,7 +2,7 @@
   <app-header [roundNumber]="roundNumber"></app-header>
   <div class="board">
     <div class="player1">
-      <div class="player_name">Player 1</div>
+      <div class="player_name">Player 1 (You)</div>
       <div class="player1_actions">
         <app-playing-card
           [type]="gameOptions.ROCK"
@@ -23,7 +23,7 @@
       <div class="player_score">Score: {{ result.player1Score }}</div>
     </div>
     <div class="player2">
-      <div class="player_name">Player 2</div>
+      <div class="player_name">Player 2 (Computer)</div>
       <div class="player2_actions">
         <app-playing-card
           [type]="gameOptions.ROCK"

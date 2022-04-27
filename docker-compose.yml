@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  frontend:
+    container_name: rock-paper-scissors
+    build: .
+    ports:
+      - "4200:8080"
