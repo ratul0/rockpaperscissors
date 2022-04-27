@@ -6,7 +6,7 @@ import { CalculateResultInterface } from './calculate-result.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class RockPaperScissorStrategy implements CalculateResultInterface {
+export class RockPaperScissorsStrategy implements CalculateResultInterface {
   calculateResult(result: Result): Result {
     if (result.player1 === Options.ROCK && result.player2 === Options.SCISSOR) {
       result.result = 'Player 1 wins';

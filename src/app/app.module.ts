@@ -12,7 +12,7 @@ import { ComputerVsComputerComponent } from './pages/computer-vs-computer/comput
 import { InstructionComponent } from './components/instruction/instruction.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CalculateResultInterfaceToken } from './services/result/calculate-result.interface';
-import { RockPaperScissorStrategy } from './services/result/rock-paper-scissor.strategy';
+import { RockPaperScissorsStrategy } from './services/result/rock-paper-scissor.strategy';
 import { PlayingCardComponent } from './components/playing-card/playing-card.component';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { PlayingCardComponent } from './components/playing-card/playing-card.com
   providers: [
     {
       provide: CalculateResultInterfaceToken,
-      useClass: RockPaperScissorStrategy,
+      useClass: RockPaperScissorsStrategy,
     },
   ],
   bootstrap: [AppComponent],
