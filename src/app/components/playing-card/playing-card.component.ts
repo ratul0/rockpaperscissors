@@ -13,8 +13,6 @@ export class PlayingCardComponent {
   @Input()
   public isActive: boolean = false;
 
-  constructor() {}
-
   public get isPaper(): boolean {
     return this.type === Options.PAPER;
   }
