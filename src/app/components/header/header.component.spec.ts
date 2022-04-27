@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { HOME } from 'src/app/constants/routes';
 import { MaterialModule } from 'src/app/material.module';
 import { InstructionService } from 'src/app/services/instruction.service';
 
@@ -9,15 +10,17 @@ describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
-  let mockRouter = {
-    navigateByUrl: jasmine.createSpy('navigateByUrl'),
-  };
+  let mockRouter: any;
   let instructionService: InstructionService;
 
   beforeEach(async () => {
     instructionService = jasmine.createSpyObj('instructionService', [
       'openInstructionDialog',
     ]);
+    mockRouter = {
+      navigateByUrl: jasmine.createSpy('navigateByUrl'),
+    };
+
     await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       providers: [
@@ -45,6 +48,6 @@ describe('HeaderComponent', () => {
 
   it('should call navigateByUrl if goToHomePage is called', () => {
     component.goToHomePage();
-    expect(mockRouter.navigateByUrl).toHaveBeenCalledWith('/home');
+    expect(mockRouter.navigateByUrl).toHaveBeenCalledWith(HOME);
   });
 });

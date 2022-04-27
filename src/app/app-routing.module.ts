@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HOME } from './constants/routes';
 import { ComputerVsComputerComponent } from './pages/computer-vs-computer/computer-vs-computer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -9,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'player-vs-computer', component: PlayerVsComputerComponent },
   { path: 'computer-vs-computer', component: ComputerVsComputerComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: HOME, pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
 
