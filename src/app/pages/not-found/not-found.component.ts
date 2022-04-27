@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HOME } from 'src/app/constants/routes';
 
 @Component({
   selector: 'app-not-found',
@@ -10,6 +11,6 @@ export class NotFoundComponent {
   constructor(private readonly router: Router) {}
 
   public goToHomePage(): void {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl(HOME);
   }
 }

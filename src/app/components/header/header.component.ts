@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { HOME } from 'src/app/constants/routes';
 import { InstructionService } from 'src/app/services/instruction.service';
 
 @Component({
@@ -21,6 +22,6 @@ export class HeaderComponent {
   }
 
   public goToHomePage(): void {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl(HOME);
   }
 }
