@@ -12,6 +12,7 @@ export class ComputerVsComputerComponent {
   constructor(private readonly calculateResultService: CalculateResultService) {
     this.board = this.initializeResult();
   }
+
   public board: Result;
 
   public get isInitialState(): boolean {
@@ -35,14 +36,17 @@ export class ComputerVsComputerComponent {
   }
 
   public playGame(): void {
-    this.board = {
-      ...this.board,
-      player1: randomEnum(Options),
-      player2: randomEnum(Options),
-      gameStatus: GameStatus.COMPLETED,
-      roundNumber: this.board.roundNumber + 1,
-    };
-    this.board = this.calculateResultService.calculateResult(this.board);
+    if (!this.isCompleted) {
+      this.board = {
+        ...this.board,
+        player1: randomEnum(Options),
+        player2: randomEnum(Options),
+        gameStatus: GameStatus.COMPLETED,
+        roundNumber: this.board.roundNumber + 1,
+      };
+      this.board = this.calculateResultService.calculateResult(this.board);
+    }
+
     console.log(this.board);
   }
 
@@ -58,7 +62,7 @@ export class ComputerVsComputerComponent {
     return {
       player1: null,
       player2: null,
-      result: 'Please press start battle button',
+      result: 'Press Start Battle',
       player1Score: 0,
       player2Score: 0,
       gameStatus: GameStatus.INITIAL_STATE,
@@ -71,7 +75,7 @@ export class ComputerVsComputerComponent {
       ...this.board,
       player1: null,
       player2: null,
-      result: 'Please press start battle button',
+      result: 'Press Start Battle',
       gameStatus: GameStatus.INITIAL_STATE,
     };
   }

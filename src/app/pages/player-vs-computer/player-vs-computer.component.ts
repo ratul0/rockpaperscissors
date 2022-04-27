@@ -62,7 +62,7 @@ export class PlayerVsComputerComponent {
     return {
       player1: null,
       player2: null,
-      result: 'Wait for the player 1 to make a choice',
+      result: 'Make your choice',
       player1Score: 0,
       player2Score: 0,
       gameStatus: GameStatus.INITIAL_STATE,
@@ -75,7 +75,7 @@ export class PlayerVsComputerComponent {
       ...this.board,
       player1: null,
       player2: null,
-      result: 'Wait for the player 1 to make a choice',
+      result: 'Make your choice',
       gameStatus: GameStatus.INITIAL_STATE,
     };
   }
